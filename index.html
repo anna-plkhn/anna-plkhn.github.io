@@ -1,16 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Студенческий файлообменник</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Подключаем шрифт Inter с начертаниями 400 (regular) и 500 (medium) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <div>
-            <img src="images/logo.svg" alt="">
+    <!-- Основной контейнер страницы -->
+    <div class="container">
+        <!-- Контейнер для всего контента с ограничением по ширине -->
+        <div class="main-container">
+            <!-- Шапка сайта -->
+            <header>
+                <div class="header-content">
+                    <div class="logo-placeholder">
+                        <img src="images/logo.svg" alt="Логотип" class="logo-full">
+                        <img src="images/logo1.svg" alt="Логотип" class="logo-icon">
+                    </div>
+
+                    <div class="auth-links">
+                        <a href="#registerModal" class="register-link">Регистрация</a>
+                        <a href="#loginModal" class="login-link">Вход</a>
+                    </div>
+                </div>
+                <!-- Разделительная линия после шапки -->
+                <div class="line-1"></div>
+            </header>
+
+            <!-- Основной контент страницы -->
+            <main>
+                <!-- Заголовок страницы с кнопкой -->
+                <div class="page-header">
+                    <h1 class="page-title">Учебные материалы</h1>
+
+                    <button class="add-post-btn">
+                        <span class="add-post-text">Добавить пост</span>
+                        <span class="add-post-icon">+</span>
+                    </button>
+                </div>
+
+                <!-- Сетка карточек с материалами -->
+                <div class="materials-grid">
+                    <div class="material-block">
+                        <div class="date">
+                            <!-- Иконка часов -->
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">15 августа</span>
+                        </div>
+                        <div class="title">Расписание занятий</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">12 августа</span>
+                        </div>
+                        <div class="title">Прикрепленные файлы</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">11 августа</span>
+                        </div>
+                        <div class="title">Лабораторная работа #5</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">9 августа</span>
+                        </div>
+                        <div class="title">Студенческая весна. Фото и...</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">5 августа</span>
+                        </div>
+                        <div class="title">Список на отчисление</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">4 августа</span>
+                        </div>
+                        <div class="title">Прикрепленные файлы</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">2 августа</span>
+                        </div>
+                        <div class="title">Расписание занятий</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">1 августа</span>
+                        </div>
+                        <div class="title">Студенческая весна. Фото и...</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">26 июня</span>
+                        </div>
+                        <div class="title">Лабораторная работа #5</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">22 июля</span>
+                        </div>
+                        <div class="title">Расписание занятий</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">21 июля</span>
+                        </div>
+                        <div class="title">Лабораторная работа #5</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">20 июля</span>
+                        </div>
+                        <div class="title">Лабораторная работа #5</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">16 июля</span>
+                        </div>
+                        <div class="title">Прикрепленные файлы</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">12 июля</span>
+                        </div>
+                        <div class="title">Студенческая весна. Фото и...</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+
+                    <div class="material-block">
+                        <div class="date">
+                            <svg class="clock-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <circle cx="6" cy="6" r="5" stroke="#838383" stroke-width="2" />
+                                <path d="M6 4V6H8" stroke="#838383" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="date-full">6 июля</span>
+                        </div>
+                        <div class="title">Список на отчисление</div>
+                        <button class="details-btn"><span class="details-btn-text">Подробнее</span></button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Кнопка загрузки дополнительных материалов -->
+            <button class="show-more-btn">Показать еще</button>
+
+            <!-- Разделительная линия перед футером -->
+            <div class="line-2"></div>
+
+            <!-- Футер сайта -->
+            <footer class="footer">
+                <p class="email">info@gmail.com</p>
+                <p class="developer-info">Информация о разработчике</p>
+            </footer>
         </div>
-    </header>
+    </div>
+
+    <!-- Модальное окно регистрации -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal-container register-modal">
+            <!-- Заголовок формы -->
+            <div class="auth-header">
+                <h2 class="auth-title">Регистрация</h2>
+            </div>
+
+            <!-- Форма регистрации с HTML5 валидацией -->
+            <form class="auth-form" id="registerForm">
+                <!-- Поле имени -->
+                <div class="form-row">
+                    <input type="text" class="form-input full-width" placeholder="Ваше имя" required>
+                </div>
+                <!-- Поля email и телефона -->
+                <div class="form-row">
+                    <!-- Email с проверкой формата -->
+                    <input type="email" class="form-input half-width" placeholder="Email" required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    <!-- Телефон с российским форматом +7 -->
+                    <input type="tel" class="form-input half-width" placeholder="+7 (___) ___-__-__" required
+                        pattern="\+7\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}"
+                        title="Введите номер в формате +7 XXX XXX XX XX">
+                </div>
+                <!-- Поля паролей -->
+                <div class="form-row">
+                    <!-- Основной пароль -->
+                    <input type="password" id="password" class="form-input half-width" placeholder="Пароль" required
+                        minlength="6">
+                    <!-- Подтверждение пароля с проверкой совпадения -->
+                    <input type="password" class="form-input half-width" placeholder="Повторите пароль" required
+                        oninput="this.setCustomValidity(this.value != document.getElementById('password').value ? 'Пароли не совпадают' : '')">
+                </div>
+                <!-- Чекбокс согласия -->
+                <div class="checkbox-row">
+                    <input type="checkbox" id="agree" class="checkbox" required>
+                    <label for="agree" class="checkbox-label">
+                        Согласен на обработку <span class="personal-data">персональных данных</span>
+                    </label>
+                </div>
+                <!-- Кнопка отправки формы -->
+                <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                <!-- Примечание о обязательных полях -->
+                <p class="form-note">
+                    <img src="images/info.svg" alt="!" class="info-icon">
+                    Все поля обязательны для заполнения
+                </p>
+            </form>
+
+            <!-- Кнопка закрытия модального окна -->
+            <a href="#" class="close-btn">&times;</a>
+        </div>
+    </div>
+
+    <!-- Модальное окно авторизации -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-container login-modal">
+            <!-- Заголовок формы -->
+            <div class="auth-header">
+                <h2 class="auth-title">Авторизация</h2>
+            </div>
+
+            <!-- Форма авторизации -->
+            <form class="auth-form" id="loginForm">
+                <!-- Поля email и пароля -->
+                <div class="form-row">
+                    <input type="email" class="form-input half-width" placeholder="Email" required>
+                    <input type="password" class="form-input half-width" placeholder="Пароль" required>
+                </div>
+                <!-- Кнопка входа -->
+                <button type="submit" class="submit-btn">Войти</button>
+                <!-- Примечание о обязательных полях -->
+                <p class="form-note">
+                    <img src="images/info.svg" alt="!" class="info-icon">
+                    Все поля обязательны для заполнения
+                </p>
+            </form>
+
+            <!-- Кнопка закрытия модального окна -->
+            <a href="#" class="close-btn">&times;</a>
+        </div>
+    </div>
+
 </body>
+
 </html>
